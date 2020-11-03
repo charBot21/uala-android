@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="searchvm"
+            type="com.carlostorres.uala.ui.viewmodel.SearchViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.view.SearchActivity">
+
+        <RelativeLayout
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginLeft="@dimen/x_small_padding"
+            android:layout_marginRight="@dimen/x_small_padding" >
+
+
+            <EditText
+                android:id="@+id/et_search"
+                style="@style/edSearchTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/serach_title"
+                android:textColorHint="@color/whiteBlur"
+                android:textColor="@color/white"
+                android:inputType="text"
+                android:text="@={searchvm.search}"
+                android:autofillHints="" />
+
+            <ImageButton
+                android:id="@+id/iv_search"
+                android:onClick="@{searchvm::onSearchValue}"
+                android:layout_width="@dimen/btn_search"
+                android:layout_height="@dimen/btn_search"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/search"
+                android:contentDescription="@string/ib_search"
+                android:background="@android:color/transparent"/>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_bar" />
+
+        <ProgressBar
+            android:id="@+id/search_progress"
+            android:visibility="gone"
+            android:layout_width="@dimen/progress_bar"
+            android:layout_height="@dimen/progress_bar"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+</layout>

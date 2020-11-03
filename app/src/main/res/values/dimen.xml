@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_margin">16dp</dimen>
+    <dimen name="x_small_padding">10dp</dimen>
+    <dimen name="xx_small_padding">5dp</dimen>
+
+
+    <!-- Buttons -->
+    <dimen name="btn_search">50dp</dimen>
+
+
+    <!-- Progress Bar -->
+    <dimen name="progress_bar">100dp</dimen>
+</resources>
